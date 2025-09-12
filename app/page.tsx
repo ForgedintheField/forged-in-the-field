@@ -1,24 +1,16 @@
-// app/page.tsx
-export default function Home() {
+export default function HomePage() {
   return (
-    <main
-      style={{
-        padding: '2rem',
-        textAlign: 'center',
-        background: '#f5f3e7',
-        minHeight: '100vh',
-        fontFamily: 'sans-serif'
-      }}
-    >
-      <h1 style={{ fontSize: '2.5rem', color: '#7a4b28' }}>
-        ✅ Forged in the Field is LIVE!
-      </h1>
-      <p style={{ fontSize: '1.25rem', marginTop: '1rem', color: '#444' }}>
-        If you’re seeing this page, your Vercel deployment and routing are working.
+    <section className="text-center">
+      <h2 className="text-3xl font-bold mb-4">Welcome to Forged in the Field</h2>
+      <p className="text-lg text-gray-700 mb-6">
+        Your upland hunting fitness and bird dog training platform.
       </p>
-      <p style={{ marginTop: '2rem', fontStyle: 'italic', color: '#555' }}>
-        Next step: Replace this placeholder with your real homepage content.
-      </p>
-    </main>
+      <a
+        href="/programs"
+        className="inline-block rounded bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700"
+      >
+        Explore Programs
+      </a>
+    </section>
   );
 }

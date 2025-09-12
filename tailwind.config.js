@@ -2,12 +2,19 @@
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}"
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      maxWidth: { "6xl": "72rem" } // optional: fixes your max-w-6xl warning
-    }
+      // Extend or override defaults if you need custom values later
+      maxWidth: {
+        '7xl': '80rem', // matches Tailwind’s default for 7xl (80rem = 1280px)
+      },
+      colors: {
+        brandBlue: '#1e40af', // optional custom color
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
