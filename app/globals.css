@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --bg:#f6f3ee; --fg:#2a1c0c; }
-html, body { background: var(--bg); color: var(--fg); }
-.container { @apply max-w-6xl mx-auto px-4; }
-.prose { @apply leading-relaxed; }
-h1,h2,h3 { @apply font-serif; }
+/* example of @apply (optional) */
+.container {
+  @apply mx-auto px-4;
+}
