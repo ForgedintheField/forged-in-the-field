@@ -1,16 +1,30 @@
-export default function HomePage() {
+// app/page.tsx
+import Container from "../components/Container";
+import Link from "next/link";
+
+export default function Home() {
   return (
-    <section className="text-center">
-      <h2 className="text-3xl font-bold mb-4">Welcome to Forged in the Field</h2>
-      <p className="text-lg text-gray-700 mb-6">
-        Your upland hunting fitness and bird dog training platform.
-      </p>
-      <a
-        href="/programs"
-        className="inline-block rounded bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700"
-      >
-        Explore Programs
-      </a>
-    </section>
+    <main className="py-16">
+      <Container>
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+          Forged in the Field
+        </h1>
+        <p className="mt-4 text-lg opacity-80">
+          Upland hunter fitness HQ — field-ready strength, durability, and recovery.
+        </p>
+
+        <div className="mt-8 flex gap-4 flex-wrap">
+          <Link href="/programs" className="rounded bg-brand-accent px-5 py-3 text-white font-semibold hover:opacity-90">
+            Explore Programs
+          </Link>
+          <Link href="/membership" className="rounded border px-5 py-3 font-semibold hover:bg-gray-50">
+            Join Membership
+          </Link>
+          <Link href="/exercise-library" className="rounded border px-5 py-3 font-semibold hover:bg-gray-50">
+            Exercise Library
+          </Link>
+        </div>
+      </Container>
+    </main>
   );
 }
