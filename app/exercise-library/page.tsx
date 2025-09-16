@@ -1,29 +1,24 @@
-import Container from "@/components/Container";
-
-export default function ExerciseLibrary() {
+function Card({ title, desc, src }: { title: string; desc: string; src: string }) {
   return (
-    <main className="py-16">
-      <Container>
-        <h1>Exercise Library</h1>
-        <p className="mt-2 opacity-80">
-          Short videos and cues for every movement in your programs.
-        </p>
+    <div className="rounded-brand border border-stroke bg-card p-5">
+      <video controls preload="metadata" className="mb-3 w-full rounded-[8px]">
+        <source src={src} type="video/mp4" />
+      </video>
+      <h3 className="text-[18px] font-extrabold">{title}</h3>
+      <p className="text-[#c9c9c7]">{desc}</p>
+    </div>
+  )
+}
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded border p-4">
-            <h3 className="font-semibold">Hip Circles</h3>
-            <p className="opacity-80">Mobilize hips before rucks & long covers.</p>
-          </div>
-          <div className="rounded border p-4">
-            <h3 className="font-semibold">RDL (Dumbbell)</h3>
-            <p className="opacity-80">Posterior-chain strength for uneven ground.</p>
-          </div>
-          <div className="rounded border p-4">
-            <h3 className="font-semibold">Step-Ups</h3>
-            <p className="opacity-80">Upland-specific climbing capacity.</p>
-          </div>
-        </div>
-      </Container>
+export default function Library() {
+  return (
+    <main className="mx-auto max-w-[1152px] px-6 py-10">
+      <h1 className="text-3xl font-extrabold sm:text-4xl">Exercise Library</h1>
+      <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Card title="Hip Circles" desc="Mobilize hips before rucks & long covers." src="/exercises/hip-circles.mp4" />
+        <Card title="RDL (Dumbbell)" desc="Posterior-chain strength for uneven ground." src="/exercises/rdl-db.mp4" />
+        <Card title="Step-Ups" desc="Upland-specific climbing capacity." src="/exercises/step-ups.mp4" />
+      </div>
     </main>
-  );
+  )
 }
